@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  issues:
+    types: opened
+  pull_request_target:
+    types: opened
+  workflow_dispatch:
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/repo-lockdown@v2
+        with:
+          issue-comment: >
+            This repository does not accept bug reports,
+            see the README for details.
+          pr-comment: >
+            This repository does not accept pull requests,
+            see the README for details.
